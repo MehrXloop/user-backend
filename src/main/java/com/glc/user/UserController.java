@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 
@@ -42,5 +43,8 @@ public void deleteUser(@PathVariable int id){
     userRepository.deleteById(id);
 }
 
-
+@PutMapping("")
+public void updateUser(@RequestBody User user){
+    userRepository.save(user);
+}
 }
